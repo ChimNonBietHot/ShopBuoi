@@ -14,6 +14,10 @@ namespace ShopBuoi.Model.Models
 
         [Required]
         [MaxLength(256)]
+        public string CustomerName { set; get; }
+
+        [Required]
+        [MaxLength(256)]
         public string CustomerAddress { set; get; }
 
         [Required]
