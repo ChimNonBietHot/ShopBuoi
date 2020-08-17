@@ -3,23 +3,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopBuoi.Model.Models
 {
-    [Table("OrderDetails")]
-    public class OrderDetail
+    [Table("ProductTags")]
+    public class ProductTag
     {
         [Key]
-        [Column(Order =1)]
-        public int OrderID { set; get; }
-
-        [Key]
-        [Column(Order = 2)]
+        [Column(Order = 1)]
         public int ProductID { set; get; }
 
-        public int Quantitty { set; get; }
-
-        [ForeignKey("OrderID")]
-        public virtual Order Order { set; get; }
+        [Key]
+        [Column(TypeName = "varchar", Order = 2)]
+        [MaxLength(50)]
+        public string TagID { set; get; }
 
         [ForeignKey("ProductID")]
         public virtual Product Product { set; get; }
+
+        [ForeignKey("TagID")]
+        public virtual Tag Tag { set; get; }
     }
 }
