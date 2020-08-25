@@ -1,4 +1,6 @@
 ﻿using ShopBuoi.Model.Abstract;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -37,5 +39,6 @@ namespace ShopBuoi.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { set; get; }
+        public virtual IEnumerable<PostTag> PosTags { set; get; }
     }
 }
